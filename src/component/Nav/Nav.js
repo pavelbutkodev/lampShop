@@ -16,11 +16,17 @@ import menu from './img/menu.svg';
 export default function NavBar(){
     const lamps = [
         {
-            name:'a',price:250, image:lamp1} ,     {
-            name:'a',price:250, image:lamp1}  ,    {
-            name:'a',price:250, image:lamp1} ,     {
-            name:'a',price:250, image:lamp1},
-
+            name:'Gold',price:243.00, image:lamp1
+        } ,
+        {
+            name:'Blue Desk',price:250, image:lamp2
+        } ,
+        {
+            name:'Blue Desk',price:250, image:lamp2
+        } ,
+        {
+            name:'Gold',price:243.00, image:lamp1
+        },
     ]
     return (
         <Router>
@@ -54,12 +60,7 @@ export default function NavBar(){
                             <div className="wrapper_main">
                                 {lamps.map(({name,price,image})=>{
                                    return <Card text={name} cost={price} img={image}/>
-
                                 })}
-                                <Card text="Gold" cost="243.00" img={lamp1}/>
-                                <Card text="Blue Desk" cost="250.00" img={lamp2}/>
-                                <Card text="Blue Desk" cost="250.00" img={lamp2}/>
-                                <Card text="Gold" cost="243.00" img={lamp1}/>
                             </div>
                         </Router>
                         <Router path="/signin">
@@ -81,6 +82,8 @@ export default function NavBar(){
 function burger(){
     document.querySelector('.bottom_col').classList.toggle('menu_active');
 }
+
+
 
 
 function SignUp(){
