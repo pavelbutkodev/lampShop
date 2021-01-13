@@ -12,8 +12,10 @@ import Card from "../Card/Card";
 import lamp1 from './img/lamp1.png';
 import lamp2 from './img/lamp2.png';
 import menu from './img/menu.svg';
+import Signin from "../Sign/Signin";
+import Signup from "../Sign/Signup";
 
-export default function NavBar(){
+export default function Nav(){
     const lamps = [
         {
             name:'Gold',price:243.00, image:lamp1
@@ -64,10 +66,10 @@ export default function NavBar(){
                             </div>
                         </Router>
                         <Router path="/signin">
-                            <Heart />
+                            <Signin />
                         </Router>
                         <Router path="/signup">
-                            <SignIn/>
+                            <Signup />
                         </Router>
                         <Router path="/cart">
                             <Cart/>
@@ -81,17 +83,6 @@ export default function NavBar(){
 
 function burger(){
     document.querySelector('.bottom_col').classList.toggle('menu_active');
-}
-
-
-
-
-function SignUp(){
-    return <h2>signup</h2>
-}
-
-function SignIn(){
-    return <h2>signip</h2>
 }
 
 function Cart(){

@@ -3,7 +3,7 @@ import './Card.scss';
 
 export default function Card(props) {
     return (
-        <div className="wrapper">
+        <div className="card_wrapper">
             <div className="main">
                 <img src={props.img} alt="lapm1"/>
             </div>
