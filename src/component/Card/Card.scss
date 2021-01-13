@@ -1,0 +1,39 @@
+.wrapper {
+  padding: 0;
+  margin: 0;
+  width: 550px;
+  border: 2px solid  rgb(230,230,229);
+  border-radius: 20px ;
+  margin-bottom: 50px;
+
+}
+
+.main {
+  height: 500px;
+  width: 100%;
+  background: rgb(242,242,242);
+}
+
+.main img {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.text {
+  padding: 25px;
+  background: #fff;
+  color: #000;
+  height: 100px;
+  width: 100%;
+}
+
+.text .name {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.text .cost {
+  font-size: 18px;
+  font-weight: 300;
+}
