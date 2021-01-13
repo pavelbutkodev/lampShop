@@ -5,7 +5,7 @@ import "./Heart.scss";
 export default function Heart() {
     return (
         <div className="img">
-            <img src={HeartImg} />
+            <img className="i_lamp_img" src={HeartImg} />
         </div>
     );
 }

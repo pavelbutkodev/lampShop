@@ -12,7 +12,7 @@ export default function Card(props) {
                     {props.text}
                 </div>
                 <div className="cost">
-                    {props.cost}
+                    ${props.cost}
                 </div>
             </div>
         </div>

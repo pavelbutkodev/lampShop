@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component, createElement} from 'react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -10,8 +10,18 @@ import Heart from "../Heart/Heart";
 import './Nav.scss';
 import Card from "../Card/Card";
 import lamp1 from './img/lamp1.png';
+import lamp2 from './img/lamp2.png';
+import menu from './img/menu.svg';
 
 export default function NavBar(){
+    const lamps = [
+        {
+            name:'a',price:250, image:lamp1} ,     {
+            name:'a',price:250, image:lamp1}  ,    {
+            name:'a',price:250, image:lamp1} ,     {
+            name:'a',price:250, image:lamp1},
+
+    ]
     return (
         <Router>
             <div className="nav_wrapper">
@@ -19,6 +29,9 @@ export default function NavBar(){
                     <div className="navbar">
                         <div className="left_col">
                             <NavLink to="/starter" className="nav_link" exact activeClassName="active" >Starter Store</NavLink>
+                        </div>
+                        <div className="menu">
+                            <img onClick={burger} className="menuBurger" src={menu} alt=""/>
                         </div>
                         <div className="right_col">
                             <NavLink to="/signin" className="nav_link" exact activeClassName="active">Sign up</NavLink>
@@ -28,16 +41,25 @@ export default function NavBar(){
                     </div>
                 </div>
             </div>
+            <div className="bottom_col">
+                <NavLink to="/signin" className="nav_link" exact activeClassName="active">Sign up</NavLink>
+                <NavLink to="/signup" className="nav_link" exact activeClassName="active">Sign in</NavLink>
+                <NavLink to="/cart" className="nav_link" exact activeClassName="active">Cart</NavLink>
+            </div>
             <div className="promo_wrapper">
                 <div className="container">
                     <Switch>
                         <Router path="/starter">
                             <Heart />
                             <div className="wrapper_main">
-                                <Card text="Gold" cost="$243.00" img={lamp1}/>
-                                <Card text="Gold" cost="$243.00" img={lamp1}/>
-                                <Card text="Gold" cost="$243.00" img={lamp1}/>
-                                <Card text="Gold" cost="$243.00" img={lamp1}/>
+                                {lamps.map(({name,price,image})=>{
+                                   return <Card text={name} cost={price} img={image}/>
+
+                                })}
+                                <Card text="Gold" cost="243.00" img={lamp1}/>
+                                <Card text="Blue Desk" cost="250.00" img={lamp2}/>
+                                <Card text="Blue Desk" cost="250.00" img={lamp2}/>
+                                <Card text="Gold" cost="243.00" img={lamp1}/>
                             </div>
                         </Router>
                         <Router path="/signin">
@@ -55,6 +77,11 @@ export default function NavBar(){
         </Router>
     );
 }
+
+function burger(){
+    document.querySelector('.bottom_col').classList.toggle('menu_active');
+}
+
 
 function SignUp(){
     return <h2>signup</h2>

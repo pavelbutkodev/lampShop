@@ -17,7 +17,7 @@
   width: 100%;
   margin: 0 auto;
   height: 100%;
-  //padding: 0 15px
+  padding: 0;
 }
 
 .navbar{
@@ -65,8 +65,48 @@
 }
 
 .wrapper_main {
-  display: grid;
-  grid-gap: 25px;
-  grid-template-columns: repeat(auto-fit, 550px);
-  grid-template-rows: repeat(2, 500px);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
+
+.menuBurger {
+  display: none;
+}
+
+.bottom_col {
+  display: none;
+}
+
+.menu_active {
+  display: block;
+}
+
+@media screen and (max-width: 800px) {
+  .right_col {
+    display: none;
+  }
+
+  .menuBurger{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: 25px;
+  }
+
+
+}
+
+@media screen and (max-width: 400px) {
+  .left_col {
+    font-size: 20px;
+  }
+
+  .menuBurger {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 25px;
+  }
+}
+
