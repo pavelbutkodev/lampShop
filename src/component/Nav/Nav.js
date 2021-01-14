@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     BrowserRouter as Router,
+    Route,
     Switch,
-    NavLink
+    NavLink,
+    Link,useHistory
 } from 'react-router-dom';
 
 import Heart from '../Heart/Heart';
@@ -11,30 +13,18 @@ import Signin from '../Sign/Signin';
 import Signup from '../Sign/Signup';
 import Cart from '../Cart/Cart';
 import CartFooter from '../Cart/CartFooter';
+import Buypage from '../Buypage/Buypage';
+
 
 import './Nav.scss';
-import menu from './img/menu.svg';
-import lamp1 from './img/lamp1.png';
-import lamp2 from './img/lamp2.png';
+import menu from '../../img/menu.svg';
 
-const Nav = () => {
-    const lamps = [
-        {
-            name: 'Gold', price: 243.00, image: lamp1
-        },
-        {
-            name: 'Blue Desk', price: 250.00, image: lamp2
-        },
-        {
-            name: 'Blue Desk', price: 250.00, image: lamp2
-        },
-        {
-            name: 'Gold', price: 243.00, image: lamp1
-        },
-    ];
-
-    function burger() {
-        document.querySelector('.bottom_col').classList.toggle('menu_active');
+const Nav = (props) => {
+    const [menuActive, setMenuActive] = useState('false')
+    const handleClickNavigationButton = () => {
+        setMenuActive(!menuActive)
+        // setMenuActive((prevState)=>{return !prevState})
+        // myRef.classList.toggle('menu_active');
     };
 
     return (
@@ -54,7 +44,7 @@ const Nav = () => {
                         </div>
                         <div className="menu">
                             <img
-                                onClick={burger}
+                                onClick={handleClickNavigationButton}
                                 className="menuBurger"
                                 src={menu}
                                 alt=""
@@ -85,11 +75,12 @@ const Nav = () => {
                             >
                                 Cart
                             </NavLink>
+
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="bottom_col">
+            <div className={menuActive ? 'menu_active_none' : 'menu_active'} >
                 <NavLink
                     to="/signin"
                     className="nav_link"
@@ -118,26 +109,43 @@ const Nav = () => {
             <div className="promo_wrapper">
                 <div className="container">
                     <Switch>
-                        <Router path="/starter">
+                        <Route  path="/page/:id/">
+                            <Buypage />
+                        </Route>
+                        <Route  path="/starter/">
                             <Heart/>
                             <div className="wrapper_main">
-                                {lamps.map(({name, price, image}, index) => {
-                                    return <Card text={name} cost={price} img={image} key={index}/>
+                                {props.lamps.map(({name, price, image, id}, index) => {
+                                    return (
+                                        <div  key={id}>
+                                            <Card
+                                                id={id}
+                                                text={name}
+                                                cost={price}
+                                                img={image}
+                                            />
+                                        </div>
+                                    )
                                 })}
                             </div>
-                        </Router>
-                        <Router path="/signin">
+                        </Route>
+                        <Route  path="/signin">
                             <Signin/>
-                        </Router>
-                        <Router path="/signup">
+                        </Route>
+                        <Route  path="/signup">
                             <Signup/>
-                        </Router>
-                        <Router path="/cart">
-                            {lamps.map(({name, price, image}, index) => {
-                                return <Cart name={name} price={price} image={image} key={index}/>
+                        </Route>
+                        <Route  path="/cart">
+                            {props.lamps.map(({name, price, image}, index) => {
+                                return <Cart
+                                    name={name}
+                                    price={price}
+                                    image={image}
+                                    key={index}
+c                                />
                             })}
-                            <CartFooter price={lamps[0].price}/>
-                        </Router>
+                            <CartFooter price={props.lamps[0].price}/>
+                        </Route>
                     </Switch>
                 </div>
             </div>

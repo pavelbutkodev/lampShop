@@ -1,7 +1,9 @@
 import React from 'react';
 
 import './Cart.scss';
-import close from '../Nav/img/33.png'
+import close from '../../img/33.png'
+
+
 
 const Cart = (props) => (
     <div className="cart_wrapper">

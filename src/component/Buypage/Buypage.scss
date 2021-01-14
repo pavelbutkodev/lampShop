@@ -1,0 +1,74 @@
+.buypage_wrapper .top_content {
+  background: none;
+  padding-top: 50px;
+  display: flex;
+}
+
+.buypage_wrapper .top_content .img_left img {
+  width: 300px;
+  height: 300px;
+  margin-right: 50px;
+}
+
+.buypage_wrapper .info_price{
+  line-height: 50px;
+  width: 100%;
+}
+
+.buypage_wrapper .info_price input {
+  display: inline;
+
+}
+
+.buypage_wrapper .price_name {
+  color: rgb(66,130,196);
+  font-size: 40px;
+}
+
+.buypage_wrapper .price_many {
+  font-size: 25px;
+  opacity: .5;
+}
+
+.buypage_wrapper .price_text {
+  font-size: 22px;
+  color: #000;
+}
+
+.buypage_wrapper .price_btn {
+  background: rgb(242,113,39);
+  border: 2px solid rgba(0, 0, 0, 0.51);
+}
+
+.buypage_wrapper .price_btn img{
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (max-width: 400px) {
+  .buypage_wrapper .top_content {
+	flex-wrap: wrap;
+	padding-left: 40px;
+	position: relative;
+  }
+  .buypage_wrapper .top_content .img_left img {
+	margin-right: 0;
+	height: 150px;
+	width: 200px;
+  }
+  .buypage_wrapper .info_price {
+	line-height: 30px;
+  }
+  .buypage_wrapper .price_name, .price_text, .price_btn {
+	font-size: 16px;
+  }
+  .buypage_wrapper .price_btn {
+	position: absolute;
+	top: -160px;
+	right: 20px;
+  }
+  .buypage_wrapper .price_btn img{
+	width: 25px;
+	height: 25px;
+  }
+}

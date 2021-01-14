@@ -2,7 +2,7 @@ import React from 'react';
 
 const Passform = () => (
     <div className="pass_wrapper">
-        <label htmlFor="">
+        <label>
             Password
             <input name="pass" type="password"/>
         </label>
