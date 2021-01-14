@@ -1,12 +1,12 @@
-import React, {Component, createElement} from 'react';
+import React from 'react';
 
-export default function Emailform () {
-    return (
-        <div className="email_wrapper">
-            <label htmlFor="">
-                Email
-                <input name="email" type="email"/>
-            </label>
-        </div>
-    );
-}
+const Emailform = () => (
+    <div className="email_wrapper">
+        <label htmlFor="">
+            Email
+            <input name="email" type="email"/>
+        </label>
+    </div>
+);
+
+export default Emailform;

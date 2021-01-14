@@ -1,4 +1,4 @@
-.sign_wrapper h2{
+.sign_wrapper h2 {
   margin: 40px 0;
   font-size: 50px;
 }
@@ -10,17 +10,18 @@
 }
 
 .pass_wrapper, .email_wrapper, .name_wrapper, .btn_wrapper {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   display: block;
   width: 100%;
   margin-bottom: 15px;
 }
 
-input, label{
+input, label {
   display: block;
   width: 100%;
   border-radius: 5px;
+  padding: 10px;
   &input {
     border: 1px solid rgb(230,230,229);
   }
@@ -29,11 +30,13 @@ input, label{
   }
 }
 
-.btn {
+.btn_wrapper .btn {
   font-size: 20px;
   color: #fff;
   background: rgb(242,113,39);
   display: block;
+  padding: 10px 40px;
+  border-radius: 5px;
   &:hover {
     color: rgb(242,113,39);
     background: #fff;

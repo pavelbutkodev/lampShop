@@ -1,12 +1,12 @@
-import React, {Component, createElement} from 'react';
+import React from 'react';
 
-export default function Passform () {
-    return (
-        <div className="pass_wrapper">
-            <label htmlFor="">
-                Password
-                <input name="pass" type="password"/>
-            </label>
-        </div>
-    );
-}
+const Passform = () => (
+    <div className="pass_wrapper">
+        <label htmlFor="">
+            Password
+            <input name="pass" type="password"/>
+        </label>
+    </div>
+);
+
+export default Passform;
