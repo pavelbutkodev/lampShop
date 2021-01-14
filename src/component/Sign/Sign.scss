@@ -1,0 +1,52 @@
+.sign_wrapper h2 {
+  margin: 40px 0;
+  font-size: 50px;
+}
+
+.sign_wrapper form {
+  padding: 20px;
+  border: 2px solid  rgb(230,230,229);
+  border-radius: 20px ;
+}
+
+.pass_wrapper, .email_wrapper, .name_wrapper, .btn_wrapper {
+  font-size: 24px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input, label {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  &input {
+    border: 1px solid rgb(230,230,229);
+  }
+  &input:focus {
+    border: none;
+  }
+}
+
+.btn_wrapper .btn {
+  font-size: 20px;
+  color: #fff;
+  background: rgb(242,113,39);
+  display: block;
+  padding: 10px 40px;
+  border-radius: 5px;
+  &:hover {
+    color: rgb(242,113,39);
+    background: #fff;
+    border: 1px solid rgb(242,113,39);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sign_wrapper h2 {
+    padding-left: 30px;
+    font-size: 24px;
+  }
+}
