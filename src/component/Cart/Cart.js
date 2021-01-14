@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './Cart.scss';
+import close from '../Nav/img/33.png'
 
 const Cart = (props) => (
     <div className="cart_wrapper">
@@ -9,18 +10,10 @@ const Cart = (props) => (
                 <img src={props.image} alt=""/>
             </div>
             <div className="info_price">
-                {props.name}
-                1x${props.price}
-                Some more information goes here
-                <button>Btn</button>
-            </div>
-        </div>
-        <div className="footer_content">
-            <div className="summ_price">
-                Sub total: {props.price}
-            </div>
-            <div className="btn_finish">
-                <button>Btn</button>
+                <div className="price_name">{props.name}</div>
+                <div className="price_many">1x ${props.price.toFixed(2)}</div>
+                <div className="price_text">Some more information goes here</div>
+                <button className="price_btn"><img src={close} alt=""/></button>
             </div>
         </div>
     </div>

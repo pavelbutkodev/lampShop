@@ -43,3 +43,10 @@ input, label {
     border: 1px solid rgb(242,113,39);
   }
 }
+
+@media screen and (max-width: 400px) {
+  .sign_wrapper h2 {
+    padding-left: 30px;
+    font-size: 24px;
+  }
+}

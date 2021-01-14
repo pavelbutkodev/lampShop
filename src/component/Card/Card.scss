@@ -35,3 +35,17 @@
   font-size: 18px;
   font-weight: 300;
 }
+
+@media screen and (max-width: 400px) {
+  .card_wrapper {
+    width: 200px;
+    border-radius: 0;
+  }
+  .card_wrapper .main img {
+    height: 200px;
+  }
+
+  .card_wrapper .main{
+    height: 200px;
+  }
+}

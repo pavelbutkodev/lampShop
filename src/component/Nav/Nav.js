@@ -12,6 +12,7 @@ import Card from '../Card/Card';
 import Signin from '../Sign/Signin';
 import Signup from '../Sign/Signup';
 import Cart from '../Cart/Cart';
+import CartFooter from '../Cart/CartFooter';
 
 import './Nav.scss';
 import menu from './img/menu.svg';
@@ -24,15 +25,19 @@ const Nav = () => {
             name: 'Gold', price: 243.00, image: lamp1
         },
         {
-            name: 'Blue Desk', price: 250, image: lamp2
+            name: 'Blue Desk', price: 250.00, image: lamp2
         },
         {
-            name: 'Blue Desk', price: 250, image: lamp2
+            name: 'Blue Desk', price: 250.00, image: lamp2
         },
         {
             name: 'Gold', price: 243.00, image: lamp1
         },
     ];
+
+    function burger() {
+        document.querySelector('.bottom_col').classList.toggle('menu_active');
+    };
 
     return (
         <Router>
@@ -130,17 +135,16 @@ const Nav = () => {
                             <Signup/>
                         </Router>
                         <Router path="/cart">
-                            <Cart name={lamps[0].name} price={lamps[0].price} image={lamps[0].image}/>
+                            {lamps.map(({name, price, image}) => {
+                                return <Cart name={name} price={price} image={image}/>
+                            })}
+                            <CartFooter price={lamps[0].price}/>
                         </Router>
                     </Switch>
                 </div>
             </div>
         </Router>
     );
-
-    function burger() {
-        document.querySelector('.bottom_col').classList.toggle('menu_active');
-    };
 };
 
 export default Nav;
