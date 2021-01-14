@@ -5,7 +5,7 @@ import HeartImg from './img/heart.svg';
 
 const Heart = () => (
     <div className="img">
-        <img className="i_lamp_img" src={HeartImg} />
+        <img className="i_lamp_img" src={HeartImg} alt="lamp"/>
     </div>
 );
 

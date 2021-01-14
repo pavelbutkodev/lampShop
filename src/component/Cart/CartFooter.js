@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './CartFooter.scss';
-import close from '../Nav/img/33.png'
 
 const CartFooter = (props) => {
     return (

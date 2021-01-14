@@ -2,8 +2,6 @@ import React from 'react';
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link,
     NavLink
 } from 'react-router-dom';
 
@@ -123,8 +121,8 @@ const Nav = () => {
                         <Router path="/starter">
                             <Heart/>
                             <div className="wrapper_main">
-                                {lamps.map(({name, price, image}) => {
-                                    return <Card text={name} cost={price} img={image}/>
+                                {lamps.map(({name, price, image}, index) => {
+                                    return <Card text={name} cost={price} img={image} key={index}/>
                                 })}
                             </div>
                         </Router>
@@ -135,8 +133,8 @@ const Nav = () => {
                             <Signup/>
                         </Router>
                         <Router path="/cart">
-                            {lamps.map(({name, price, image}) => {
-                                return <Cart name={name} price={price} image={image}/>
+                            {lamps.map(({name, price, image}, index) => {
+                                return <Cart name={name} price={price} image={image} key={index}/>
                             })}
                             <CartFooter price={lamps[0].price}/>
                         </Router>
