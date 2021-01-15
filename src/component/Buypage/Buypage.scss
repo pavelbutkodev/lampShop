@@ -5,39 +5,65 @@
 }
 
 .buypage_wrapper .top_content .img_left img {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   margin-right: 50px;
+  background: none;
+  border: none;
 }
 
 .buypage_wrapper .info_price{
   line-height: 50px;
   width: 100%;
-}
-
-.buypage_wrapper .info_price input {
-  display: inline;
-
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
 }
 
 .buypage_wrapper .price_name {
-  color: rgb(66,130,196);
+  color: #000;
   font-size: 40px;
 }
 
 .buypage_wrapper .price_many {
-  font-size: 25px;
-  opacity: .5;
+  font-size: 30px;
+  font-weight: 300;
+  margin-top: 15px;
 }
 
 .buypage_wrapper .price_text {
-  font-size: 22px;
-  color: #000;
+  background: rgb(232,232,232);
+  font-size: 30px;
+  color: rgb(93,93,93);
+  border-radius: 5px;
+  width: 30%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.buypage_wrapper .about_lamp {
+  font-size: 35px;
+  margin-top: 60px;
 }
 
 .buypage_wrapper .price_btn {
+  color: #fff;
+  font-size: 30px;
   background: rgb(242,113,39);
   border: 2px solid rgba(0, 0, 0, 0.51);
+  padding: 20px 40px;
+}
+
+.send_add {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.buypage_wrapper .info_price input {
+  display: inline;
+  width: 60%;
+  font-size: 30px;
 }
 
 .buypage_wrapper .price_btn img{
