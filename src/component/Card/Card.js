@@ -6,10 +6,10 @@ import './Card.scss';
 
 const Card = (props) => {
   let history = useHistory();
-
   const handleClick = () => {
     history.push(`/page/${props.id}/`)
   }
+
   return (
     <div className="card_wrapper" onClick={handleClick}>
       <div className="main">

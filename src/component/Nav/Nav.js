@@ -33,6 +33,15 @@ const Nav = () => {
     })
   }, []);
 
+  const [count, setCount] = useState(0);
+  useEffect(()=>{
+    if ((JSON.parse(localStorage.getItem('cart')))) {
+      setCount((JSON.parse(localStorage.getItem('cart'))).length)
+    } else {
+      setCount(0);
+    }
+  }, [localStorage.getItem('cart')])
+
   return (
     <Router>
       <div className="nav_wrapper">
@@ -79,7 +88,7 @@ const Nav = () => {
                 exact
                 activeClassName="active"
               >
-                Cart
+               Cart {count}
               </NavLink>
 
             </div>

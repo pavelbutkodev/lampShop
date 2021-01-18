@@ -8,29 +8,28 @@ const Buypage = () => {
   const textInput = useRef(null);
   let path = Number(window.location.pathname.split('/')[2]);
   let lamps = JSON.parse(localStorage.getItem('lamps'));
-  console.log('==========>lamps', lamps)
   useEffect(()=>{
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart])
 
   let handleCheckItemInLocalHost = () => {
-    if (textInput.current.value > lamps[path].total) {
-      setError(`Error: There is not enough stock to add ${lamps[path].name} to you cart`)
-    } else {
+    if (textInput.current.value <= lamps[path].total && textInput.current.value !== ''){
       setError(null);
-      lamps[path].total = textInput.current.value;
+      lamps[path].total = lamps[path].total - textInput.current.value;
       localStorage.setItem('lamps', JSON.stringify(lamps));
 
       setCart(cart.concat([
           {
             id: lamps[path].id,
-            total: lamps[path].total,
+            total: textInput.current.value,
             name: lamps[path].name,
             image: lamps[path].image,
             price: lamps[path].price
           }
         ])
       )
+    } else {
+      setError(`Error: There is not enough stock to add ${lamps[path].name} to you cart`)
     }
   };
 
