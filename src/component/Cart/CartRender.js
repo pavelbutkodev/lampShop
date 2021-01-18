@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import Cart from './Cart';
 
 const CartRender = (props) => {
+
   return props.cards && props.cards.length > 0 && props.cards.map(({name, price, image, total, id}, index) => {
     return (
       <Cart
@@ -17,7 +18,8 @@ const CartRender = (props) => {
         }}
       />
     )
-  })
+  }
+  )
 }
 
 export default CartRender;
