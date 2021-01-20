@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 
 import './Buypage.scss';
 
-const Buypage = () => {
+const BuyPage = () => {
   const [error, setError] = useState(null)
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart') )|| [])
   const textInput = useRef(null);
@@ -60,4 +60,4 @@ const Buypage = () => {
   );
 }
 
-export default Buypage;
+export default BuyPage;

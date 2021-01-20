@@ -8,16 +8,17 @@ import {
 
 import Heart from '../Heart/Heart';
 import Card from '../Card/Card';
-import Signin from '../Sign/Signin';
-import Signup from '../Sign/Signup';
+import SignUp from '../Sign/SignUp';
+import SignIn from '../Sign/SignIn';
 import CartFooter from '../Cart/CartFooter';
-import Buypage from '../Buypage/Buypage';
+import BuyPage from '../Buypage/BuyPage';
 import CartRender from '../Cart/CartRender'
 
 import './Nav.scss';
 import menu from '../../img/menu.svg';
 
 const Nav = () => {
+
   const [menuActive, setMenuActive] = useState(false)
   const handleClickNavigationButton = () => {
     setMenuActive(!menuActive)
@@ -28,13 +29,15 @@ const Nav = () => {
   const cards = JSON.parse(localStorage.getItem('cart'));
 
   useEffect(() => {
+
     setTimeout(() => {
       setState(JSON.parse(localStorage.getItem('lamps')));
-    })
+    },100)
   }, []);
 
   const [count, setCount] = useState(0);
-  useEffect(()=>{
+  useEffect(() => {
+
     if ((JSON.parse(localStorage.getItem('cart')))) {
       setCount((JSON.parse(localStorage.getItem('cart'))).length)
     } else {
@@ -141,17 +144,17 @@ const Nav = () => {
               </div>
             </Route>
             <Route path="/signin">
-              <Signin/>
+              <SignUp/>
             </Route>
             <Route path="/signup">
-              <Signup/>
+              <SignIn/>
             </Route>
             <Route path="/cart">
               <CartRender cards={cards}/>
               <CartFooter price={state && state.length > 0 && state[0].price}/>
             </Route>
             <Route path="/page/:id/">
-              <Buypage/>
+              <BuyPage/>
             </Route>
           </Switch>
         </div>

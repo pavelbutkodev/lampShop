@@ -3,13 +3,13 @@
   font-size: 50px;
 }
 
-.sign_wrapper form {
+.sign_wrapper {
   padding: 20px;
   border: 2px solid  rgb(230,230,229);
   border-radius: 20px ;
 }
 
-.pass_wrapper, .email_wrapper, .name_wrapper, .btn_wrapper {
+.input_wrapper, .btn_wrapper {
   font-size: 24px;
   font-weight: 500;
   display: block;
@@ -17,7 +17,7 @@
   margin-bottom: 15px;
 }
 
-.pass_wrapper input, label , .email_wrapper input, label , .name_wrapper input, label , .btn_wrapper input, label  {
+.input_wrapper input, label , .btn_wrapper input, label  {
   display: block;
   width: 100%;
   border-radius: 5px;
@@ -31,6 +31,7 @@
 }
 
 .btn_wrapper .btn {
+  margin: 10px;
   font-size: 20px;
   color: #fff;
   background: rgb(242,113,39);
