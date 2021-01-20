@@ -19,3 +19,21 @@ export const registration = (data) => {
     data,
   });
 };
+
+export const getAllProduct = (data) => {
+  const url = `${urls.PRODUCT}`;
+  return ajaxWrapper({
+    method: 'GET',
+    url,
+    data,
+  }).then(data => data.data)
+};
+
+export const getOneProduct = (id) => {
+  const url = `${urls.PRODUCT}/${id}`;
+  return ajaxWrapper({
+    method: 'GET',
+    url,
+  }).then(data => data.data)
+};
+

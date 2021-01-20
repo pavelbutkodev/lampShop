@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -13,6 +13,7 @@ import SignIn from '../Sign/SignIn';
 import CartFooter from '../Cart/CartFooter';
 import BuyPage from '../Buypage/BuyPage';
 import CartRender from '../Cart/CartRender'
+import {getAllProduct} from '../../services/ajaxUser';
 
 import './Nav.scss';
 import menu from '../../img/menu.svg';
@@ -25,25 +26,20 @@ const Nav = () => {
     // setMenuActive((prevState)=>{return !prevState})
     // myRef.classList.toggle('menu_active');
   };
-  const [state, setState] = useState(null);
-  const cards = JSON.parse(localStorage.getItem('cart'));
 
-  useEffect(() => {
-
-    setTimeout(() => {
-      setState(JSON.parse(localStorage.getItem('lamps')));
-    },100)
-  }, []);
-
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-
-    if ((JSON.parse(localStorage.getItem('cart')))) {
-      setCount((JSON.parse(localStorage.getItem('cart'))).length)
-    } else {
-      setCount(0);
-    }
-  }, [localStorage.getItem('cart')])
+  const [products, setProducts] = useState(null)
+  const getProdCall = useCallback(
+    (data) => {
+      getAllProduct()
+        .then(data => {
+          setProducts(data)
+        })
+        .catch(e => console.log('==========>e', e))
+      setProducts(data)
+    }, [])
+  useEffect(()=>{
+    getProdCall()
+  }, [])
 
   return (
     <Router>
@@ -91,7 +87,7 @@ const Nav = () => {
                 exact
                 activeClassName="active"
               >
-               Cart {count}
+               Cart {0}
               </NavLink>
 
             </div>
@@ -130,14 +126,14 @@ const Nav = () => {
             <Route path="/starter/">
               <Heart/>
               <div className="wrapper_main">
-                {state && state.length > 0 && state.map(({name, price, image, id}) => {
+                {products && products.length > 0 && products.map(({name, price, img, _id}, key) => {
                   return (
                     <Card
-                      key={id}
-                      id={id}
+                      key={key}
+                      id={_id}
                       text={name}
                       cost={price}
-                      img={image}
+                      img={img}
                     />
                   )
                 })}
@@ -150,10 +146,10 @@ const Nav = () => {
               <SignIn/>
             </Route>
             <Route path="/cart">
-              <CartRender cards={cards}/>
-              <CartFooter price={state && state.length > 0 && state[0].price}/>
+              <CartRender cards={products}/>
+              <CartFooter price={products && products.length > 0 && products[0].price}/>
             </Route>
-            <Route path="/page/:id/">
+            <Route path="/page/:id">
               <BuyPage/>
             </Route>
           </Switch>

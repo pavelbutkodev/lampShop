@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {
   useHistory
 } from 'react-router-dom';
+
 import './Card.scss';
 
 const Card = (props) => {
   let history = useHistory();
   const handleClick = () => {
-    history.push(`/page/${props.id}/`)
+    history.push(`/page/${props.id}`)
   }
 
   return (

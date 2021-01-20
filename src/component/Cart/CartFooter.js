@@ -2,14 +2,12 @@ import React, {useEffect, useState} from 'react';
 
 import './CartFooter.scss';
 
-const CartFooter = () => {
-  const [price, setPrice] = useState(0);
-
+const CartFooter = (props) => {
   return (
     <div className="footer_wrapper">
       <div className="footer_content">
         <div className="sum_price">
-          <span>Sub total:</span> ${price}
+          <span>Sub total:</span> ${props.price}
         </div>
         <div className="btn_finish">
           <button>Check out</button>
