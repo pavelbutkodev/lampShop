@@ -1,0 +1,100 @@
+.buypage_wrapper .top_content {
+  background: none;
+  padding-top: 50px;
+  display: flex;
+}
+
+.buypage_wrapper .top_content .img_left img {
+  width: 400px;
+  height: 400px;
+  margin-right: 50px;
+  background: none;
+  border: none;
+}
+
+.buypage_wrapper .info_price{
+  line-height: 50px;
+  width: 100%;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.buypage_wrapper .price_name {
+  color: #000;
+  font-size: 40px;
+}
+
+.buypage_wrapper .price_many {
+  font-size: 30px;
+  font-weight: 300;
+  margin-top: 15px;
+}
+
+.buypage_wrapper .price_text {
+  background: rgb(232,232,232);
+  font-size: 30px;
+  color: rgb(93,93,93);
+  border-radius: 5px;
+  width: 30%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.buypage_wrapper .about_lamp {
+  font-size: 35px;
+  margin-top: 60px;
+}
+
+.buypage_wrapper .price_btn {
+  color: #fff;
+  font-size: 30px;
+  background: rgb(242,113,39);
+  border: 2px solid rgba(0, 0, 0, 0.51);
+  padding: 20px 40px;
+}
+
+.send_add {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.buypage_wrapper .info_price input {
+  display: inline;
+  width: 60%;
+  font-size: 30px;
+}
+
+.buypage_wrapper .price_btn img{
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (max-width: 400px) {
+  .buypage_wrapper .top_content {
+	flex-wrap: wrap;
+	padding-left: 40px;
+	position: relative;
+  }
+  .buypage_wrapper .top_content .img_left img {
+	margin-right: 0;
+	height: 150px;
+	width: 200px;
+  }
+  .buypage_wrapper .info_price {
+	line-height: 30px;
+  }
+  .buypage_wrapper .price_name, .price_text, .price_btn {
+	font-size: 16px;
+  }
+  .buypage_wrapper .price_btn {
+	position: absolute;
+	top: -160px;
+	right: 20px;
+  }
+  .buypage_wrapper .price_btn img{
+	width: 25px;
+	height: 25px;
+  }
+}
