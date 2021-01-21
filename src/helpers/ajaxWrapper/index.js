@@ -1,13 +1,16 @@
 import axios from 'axios';
 
 export const ajaxWrapper = (params) => {
+  const token = localStorage.getItem('token');
   let defautlHeaders = {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Authorization': token,
   };
 
   const headers = {
     ...defautlHeaders,
     ...params.headers,
+
   };
 
   return axios({

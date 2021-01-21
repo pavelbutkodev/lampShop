@@ -16,7 +16,8 @@ const SignUp = () => {
     (data) => {
       login(data)
         .then((response) => {
-          console.log('==========>response', response)
+          console.log(response.token)
+          localStorage.setItem('token', response.token);
         })
         .catch((e) => {
           console.log('==========>e', e)

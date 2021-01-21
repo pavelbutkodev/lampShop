@@ -8,7 +8,7 @@ export const login = (data) => {
     method: 'POST',
     url,
     data,
-  });
+  }).then(data => data.data)
 };
 
 export const registration = (data) => {
@@ -37,3 +37,37 @@ export const getOneProduct = (id) => {
   }).then(data => data.data)
 };
 
+export const getCartToken = (data) => {
+  const url = `${urls.CART}`;
+  return ajaxWrapper({
+    method: 'GET',
+    url,
+  }).then(data => data.data)
+};
+
+
+export const checkOut = (data) => {
+  const url = `${urls.CART}`;
+  return ajaxWrapper({
+    method: 'DELETE',
+    url,
+  }).then(data => data.data)
+};
+
+export const deleteOne = (id, total) => {
+  const url = `${urls.CART}/${id}`;
+  return ajaxWrapper({
+    method: 'DELETE',
+    url,
+    data: {productId: id, total}
+  }).then(data => data.data)
+};
+
+export const addOne = (id, total) => {
+  const url = `${urls.CART}/${id}`;
+  return ajaxWrapper({
+    method: 'POST',
+    url,
+    data: {productId: id, total}
+  }).then(data => data.data)
+};

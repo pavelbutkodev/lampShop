@@ -13,7 +13,7 @@ import SignIn from '../Sign/SignIn';
 import CartFooter from '../Cart/CartFooter';
 import BuyPage from '../Buypage/BuyPage';
 import CartRender from '../Cart/CartRender'
-import {getAllProduct} from '../../services/ajaxUser';
+import {getAllProduct, getCartToken} from '../../services/ajaxUser';
 
 import './Nav.scss';
 import menu from '../../img/menu.svg';
@@ -23,10 +23,19 @@ const Nav = () => {
   const [menuActive, setMenuActive] = useState(false)
   const handleClickNavigationButton = () => {
     setMenuActive(!menuActive)
-    // setMenuActive((prevState)=>{return !prevState})
-    // myRef.classList.toggle('menu_active');
   };
 
+  const [cartToken, setCartToken] = useState(null)
+  const getCartCall = useCallback(
+    (data) => {
+      getCartToken()
+        .then(data => {
+          setCartToken(data)
+        })
+        .catch(e => console.log('==========>e', e))
+      setCartToken(data)
+    }, [])
+  
   const [products, setProducts] = useState(null)
   const getProdCall = useCallback(
     (data) => {
@@ -39,6 +48,7 @@ const Nav = () => {
     }, [])
   useEffect(()=>{
     getProdCall()
+    getCartCall()
   }, [])
 
   return (
@@ -87,9 +97,8 @@ const Nav = () => {
                 exact
                 activeClassName="active"
               >
-               Cart {0}
+               Cart ({cartToken && cartToken.length})
               </NavLink>
-
             </div>
           </div>
         </div>
@@ -117,7 +126,7 @@ const Nav = () => {
           exact
           activeClassName="active"
         >
-          Cart
+          Cart 
         </NavLink>
       </div>
       <div className="promo_wrapper">
@@ -146,11 +155,11 @@ const Nav = () => {
               <SignIn/>
             </Route>
             <Route path="/cart">
-              <CartRender cards={products}/>
-              <CartFooter price={products && products.length > 0 && products[0].price}/>
+              <CartRender render={getCartCall} cards={cartToken}/>
+              <CartFooter render={getCartCall} price={cartToken && cartToken.length > 0 && cartToken}/>
             </Route>
             <Route path="/page/:id">
-              <BuyPage/>
+              <BuyPage render={getCartCall} products={products}/>
             </Route>
           </Switch>
         </div>
