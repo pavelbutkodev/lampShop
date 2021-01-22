@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-client/node_modules
+/node_modules
 api/node_modules
 /.pnp
 .pnp.js
@@ -23,8 +23,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 #LIBS ROOT
-client/package-lock.json
-api/package-lock.json
+package-lock.json
 yarn.lock
 #CODE STYLE
 .idea
