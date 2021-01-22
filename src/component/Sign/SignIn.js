@@ -19,9 +19,6 @@ const SignUp = () => {
           console.log(response.token)
           localStorage.setItem('token', response.token);
         })
-        .catch((e) => {
-          console.log('==========>e', e)
-        })
     }, [])
 
   const handleLoginClick = () => {

@@ -20,37 +20,34 @@ import menu from '../../img/menu.svg';
 import shop from '../../img/shoping.png'
 
 const Nav = () => {
-
+  const [products, setProducts] = useState(null)
   const [menuActive, setMenuActive] = useState(false)
-  const handleClickNavigationButton = () => {
-    setMenuActive(!menuActive)
-  };
-
   const [cartToken, setCartToken] = useState(null)
+
   const getCartCall = useCallback(
-    (data) => {
+    () => {
       getCartToken()
         .then(data => {
           setCartToken(data)
         })
-        .catch(e => console.log('==========>e', e))
-      setCartToken(data)
     }, [])
 
-  const [products, setProducts] = useState(null)
   const getProdCall = useCallback(
-    (data) => {
+    () => {
       getAllProduct()
         .then(data => {
           setProducts(data)
         })
-        .catch(e => console.log('==========>e', e))
-      setProducts(data)
     }, [])
+
   useEffect(() => {
     getProdCall()
     getCartCall()
   }, [])
+
+  const handleClickNavigationButton = () => {
+    setMenuActive(!menuActive)
+  };
 
   return (
     <Router>
@@ -160,11 +157,20 @@ const Nav = () => {
               <SignUp/>
             </Route>
             <Route path="/cart">
-              <CartRender render={getCartCall} cards={cartToken}/>
-              <CartFooter render={getCartCall} price={cartToken && cartToken.length > 0 && cartToken}/>
+              <CartRender
+                render={getCartCall}
+                cards={cartToken}
+              />
+              <CartFooter
+                render={getCartCall}
+                price={cartToken && cartToken.length > 0 && cartToken}
+              />
             </Route>
             <Route path="/page/:id">
-              <BuyPage render={getCartCall} products={products}/>
+              <BuyPage
+                render={getCartCall}
+                products={products}
+              />
             </Route>
           </Switch>
         </div>

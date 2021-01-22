@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useEffect} from 'react';
 
 import {checkOut} from '../../services/ajaxUser';
 
@@ -8,13 +8,11 @@ const CartFooter = (props) => {
     const checkCall = useCallback(
       (data) => {
         checkOut(data)
-          .then(data => {
-          })
-          .catch(e => console.log('==========>e', e))
       }, [])
-    const checkOutClick = () => {
+
+   const checkOutClick = async () => {
       checkCall(props.productId)
-      props.render()
+      await props.render()
     }
 
     useEffect(() => {

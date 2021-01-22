@@ -7,10 +7,13 @@ import './Buypage.scss';
 
 const BuyPage = (props) => {
   const [error, setError] = useState(null)
+  const [product, setProduct] = useState(null)
+  const setCreateElem = useState(null)
+
   const {id} = useParams()
+
   const textInput = useRef(null);
 
-  const setCreateElem = useState(null)
   const addOneCard = useCallback(
     (data) => {
       addOne(data, textInput.current.value)
@@ -18,9 +21,20 @@ const BuyPage = (props) => {
           setCreateElem[1](data)
           props.render()
         })
-        .catch(e => console.log('==========>e', e))
       setCreateElem[1](data)
     }, [])
+
+  const getOneProdCall = useCallback(
+    () => {
+      getOneProduct(id)
+        .then(data => {
+          setProduct(data)
+        })
+    }, [])
+
+  useEffect(() => {
+    getOneProdCall()
+  }, [])
 
   let handleCheckItemInLocalHost = (e) => {
     if (product.total <= 0 || product.total < textInput.current.value || textInput.current.value <= 0) {
@@ -34,20 +48,6 @@ const BuyPage = (props) => {
       }, 500)
     }
   };
-
-  const [product, setProduct] = useState(null)
-  const getOneProdCall = useCallback(
-    (data) => {
-      getOneProduct(id)
-        .then(data => {
-          setProduct(data)
-        })
-        .catch(e => console.log('==========>e', e))
-      setProduct(data)
-    }, [])
-  useEffect(() => {
-    getOneProdCall()
-  }, [])
 
   if (product) {
     const NAME = product.name;

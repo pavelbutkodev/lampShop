@@ -25,14 +25,14 @@ module.exports.getById = async (req, res) => {
 
 module.exports.create = async (req, res) => {
   try {
-    const product = await new Product({
+    const product = new Product({
       img: req.file ? req.file.path : '',
       name: req.body.name,
       price: req.body.price,
       total: req.body.total,
       productId: req.body.productId,
       about: req.body.about,
-    }).save()
+    })
     await product.save()
     res.status(201).json(product)
   } catch (e) {

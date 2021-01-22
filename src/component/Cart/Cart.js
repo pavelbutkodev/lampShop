@@ -13,8 +13,6 @@ const Cart = (props) => {
         .then(data => {
           setRemove[1](data)
         })
-        .catch(e => console.log('==========>e', e))
-      setRemove[1](data)
     }, [])
 
   const btnRemove = () => {
