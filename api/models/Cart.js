@@ -20,7 +20,10 @@ const cartSchema = new Schema({
   },
   productId: {
     type: Number
-  }
+  },
+  about: {
+    type:String
+  },
 })
 
 module.exports = mongoose.model('carts', cartSchema);

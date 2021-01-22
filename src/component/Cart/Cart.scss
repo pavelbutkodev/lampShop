@@ -42,17 +42,17 @@
     background: none;
     font-size: 14px;
     border: none;
+
     &:focus {
       outline: none;
     }
   }
 
   .price_btn img {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border: 2px solid rgba(0, 0, 0, 0.51);
   }
-
 }
 
 @media screen and (max-width: 400px) {

@@ -36,12 +36,13 @@ module.exports.remove = async (req, res) => {
 module.exports.createElem = async (req, res) => {
   try {
     const product = await Product.find({productId: req.body.productId})
-    const {name, price, productId, img} = product[0]
+    const {name, price, productId, img, about} = product[0]
     const cart = new Cart({
       name,
       price,
       productId,
       img,
+      about,
       user: req.user.id,
       total: req.body.total,
     })

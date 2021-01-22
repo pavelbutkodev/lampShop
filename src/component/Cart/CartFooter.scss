@@ -1,7 +1,7 @@
 .footer_wrapper {
   border-top: 1px solid rgba(34, 36, 38, .15);
   border-bottom: 1px solid hsla(0, 0%, 100%, .1);
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .footer_content {
@@ -23,6 +23,7 @@
 }
 
 .sum_price span {
+  font-size: 14px;
   font-weight: 600;
   padding-right: 5px;
 }

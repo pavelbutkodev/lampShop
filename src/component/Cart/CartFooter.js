@@ -26,13 +26,15 @@ const CartFooter = (props) => {
       const players = props.price;
       let age = players.reduce((sum, player) => (+sum + +player.price) * +player.total, 0);
       localStorage.setItem('total', age)
+    } else {
+      localStorage.setItem('total', 0);
     }
 
     return (
       <div className="footer_wrapper">
         <div className="footer_content">
           <div className="sum_price">
-            <span>Sub total:</span> ${localStorage.getItem('total')}
+            <span>Sub total:</span> ${localStorage.getItem('total')}.00
           </div>
           <div className="btn_finish">
             <button onClick={checkOutClick}>Check out</button>

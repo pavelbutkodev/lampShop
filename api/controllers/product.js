@@ -30,7 +30,8 @@ module.exports.create = async (req, res) => {
       name: req.body.name,
       price: req.body.price,
       total: req.body.total,
-      productId: req.body.productId
+      productId: req.body.productId,
+      about: req.body.about,
     }).save()
     await product.save()
     res.status(201).json(product)
