@@ -8,8 +8,8 @@
   margin: 0 auto;
   width: 100%;
   height: 69.3px;
-  border: 1px solid rgba(34,36,38,.15);
-  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  border: 1px solid rgba(34, 36, 38, .15);
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
   border-radius: .28571429rem;
 }
 
@@ -28,13 +28,13 @@
 }
 
 .navbar {
-  color: rgba(0,0,0,.95);
+  color: rgba(0, 0, 0, .95);
   padding: 0;
   font-size: 14px;
   font-weight: 400;
 }
 
-.navbar .left_col .starter{
+.navbar .left_col .starter {
   font-size: 16px;
 }
 
@@ -53,7 +53,7 @@
 
 .active {
   color: #000;
-  background: rgb(242,242,242);
+  background: rgb(242, 242, 242);
   position: relative;
 }
 
@@ -98,7 +98,7 @@
   display: none;
 }
 
-.menu_active_none{
+.menu_active_none {
   display: none;
 }
 
@@ -112,6 +112,17 @@
   width: 16px;
   height: 16px;
   margin-right: 10px;
+}
+
+
+@media screen and (min-width: 801px){
+  .menuBurger {
+    display: none;
+  }
+
+  .two_nav {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -128,8 +139,24 @@
 }
 
 @media screen and (max-width: 400px) {
+  .nav_link {
+    padding: 37px 2em;
+  }
+
+  .wrapper_main {
+    flex-wrap: wrap;
+  }
+
+  .starter {
+    padding: 18px;
+  }
+
   .left_col {
     font-size: 20px;
+  }
+
+  .starter {
+    padding: 18px;
   }
 
   .menuBurger {
@@ -137,11 +164,5 @@
     width: 15px;
     height: 15px;
     margin-right: 25px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .nav_link {
-    padding: 37px 2em;
   }
 }
