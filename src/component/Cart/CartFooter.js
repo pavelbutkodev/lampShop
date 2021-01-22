@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 
 import {checkOut} from '../../services/ajaxUser';
 
@@ -21,11 +21,18 @@ const CartFooter = (props) => {
       props.render()
     }, [])
 
+
+    if (props.price) {
+      const players = props.price;
+      let age = players.reduce((sum, player) => (+sum + +player.price) * +player.total, 0);
+      localStorage.setItem('total', age)
+    }
+
     return (
       <div className="footer_wrapper">
         <div className="footer_content">
           <div className="sum_price">
-            <span>Sub total:</span> $ 0
+            <span>Sub total:</span> ${localStorage.getItem('total')}
           </div>
           <div className="btn_finish">
             <button onClick={checkOutClick}>Check out</button>

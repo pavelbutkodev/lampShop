@@ -42,7 +42,8 @@ const SignUp = () => {
       <h2>Log in your account</h2>
       <div className="wrapper_form">
         <InputForm value={form.email} onChange={(e) => handleInputChange(e, 'email')} name={'Email'} type={'email'}/>
-        <InputForm value={form.password} onChange={(e) => handleInputChange(e, 'password')} name={'Password'} type={'password'}/>
+        <InputForm value={form.password} onChange={(e) => handleInputChange(e, 'password')} name={'Password'}
+                   type={'password'}/>
         <Btnform name="Login" onClick={() => handleLoginClick()}/>
       </div>
     </div>

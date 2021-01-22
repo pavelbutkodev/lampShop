@@ -23,11 +23,15 @@ const BuyPage = (props) => {
     }, [])
 
   let handleCheckItemInLocalHost = (e) => {
-    if (product.total < textInput.current.value) {
+    if (product.total <= 0 || product.total < textInput.current.value || textInput.current.value <= 0) {
       setError(`Error: There is not enough stock to add ${product.name} to you cart`);
     } else {
       e.preventDefault();
       addOneCard(product.productId)
+      setError(null)
+      setTimeout(() => {
+        getOneProdCall()
+      }, 500)
     }
   };
 
@@ -55,7 +59,7 @@ const BuyPage = (props) => {
           <div className="info_price">
             <div className="price_name">{product.name}</div>
             <div className="price_many">${product.price}.00</div>
-            <div className="price_text">id: {product.productId}</div>
+            <div className="price_text">id: {product.total}</div>
             <div className="send_add">
               <input type="text" ref={textInput}/>
               <button className="price_btn" onClick={handleCheckItemInLocalHost}>Add to Cart</button>
