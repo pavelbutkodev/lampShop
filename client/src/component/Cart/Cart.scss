@@ -1,0 +1,79 @@
+.cart_wrapper {
+  .top_content {
+    background: none;
+    padding-top: 10px;
+    display: flex;
+  }
+
+  .top_content .img_left img {
+    width: 150px;
+    height: 150px;
+    background-color: #f2f2f2;
+    margin-right: 24px;
+  }
+
+  .info_price{
+    line-height: 50px;
+    position: relative;
+    width: 100%;
+  }
+
+  .price_name {
+    color: #4183c4;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 5px 0;
+  }
+
+  .price_many {
+    font-size: 16px;
+    opacity: .5;
+  }
+
+  .price_text {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #000;
+  }
+
+  .info_price .price_btn {
+    position: absolute;
+    right: 0;
+    background: none;
+    font-size: 14px;
+    border: none;
+  }
+
+  .price_btn img{
+    width: 25px;
+    height: 25px;
+    border: 2px solid rgba(0, 0, 0, 0.51);
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+  .top_content {
+    flex-wrap: wrap;
+    padding-left: 40px;
+  }
+  .top_content .img_left img {
+    margin-right: 0;
+    height: 150px;
+    width: 200px;
+  }
+  .info_price {
+    line-height: 30px;
+  }
+  .price_name, .price_text, .price_btn {
+    font-size: 16px;
+  }
+  .price_btn {
+    top: -160px;
+    right: 20px;
+  }
+  .price_btn img{
+    width: 25px;
+    height: 25px;
+  }
+}

@@ -1,0 +1,134 @@
+*{
+  font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
+  line-height: 1.4285em;
+}
+
+.buypage_wrapper .top_content {
+  background: none;
+  padding-top: 50px;
+  display: flex;
+}
+
+.buypage_wrapper .top_content .img_left img {
+  width: 250px;
+  height: 250px;
+  margin-right: 50px;
+  background: none;
+  border: none;
+}
+
+.buypage_wrapper .info_price{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.buypage_wrapper .price_name {
+  color: #000;
+  font-weight: 600;
+  font-size: 1.28571429em;
+}
+
+.buypage_wrapper .price_many {
+  margin-top: 10px;
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.buypage_wrapper .price_text {
+  text-transform: uppercase;
+  font-size: 12px;
+  display: inline-block;
+  width: 30%;
+  line-height: 1;
+  vertical-align: baseline;
+  margin: 7px .14285714em;
+  background-color: #e8e8e8;
+  background-image: none;
+  padding: .5833em .833em;
+  color: rgba(0,0,0,.6);
+  font-weight: 700;
+  border: 0 solid transparent;
+  border-radius: .28571429rem;
+}
+
+.buypage_wrapper .about_lamp p {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.buypage_wrapper .about_lamp h3 {
+  font-size: 1.28571429rem;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.buypage_wrapper .price_btn {
+  height: 42px;
+  width: 134px;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  background: rgb(242,113,39);
+  border-radius: 0 .28571429rem .28571429rem 0;
+  padding-top: .78571429em;
+  padding-bottom: .78571429em;
+  outline: none;
+}
+
+.send_add {
+  height: 42px;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.buypage_wrapper .info_price input {
+  width: 205px;
+  height: 42px;
+  line-height: 1.21428571em;
+  padding: .67857143em 1em;
+  display: inline;
+  font-size: 100%;
+  background: #fff;
+  border: 1px solid rgba(34,36,38,.15);
+  color: rgba(0,0,0,.87);
+  border-radius: .28571429rem;
+  box-shadow: none;
+  outline: none;
+}
+
+//.buypage_wrapper .price_btn img{
+//  width: 50px;
+//  height: 50px;
+//}
+
+@media screen and (max-width: 400px) {
+  .buypage_wrapper .top_content {
+	flex-wrap: wrap;
+	padding-left: 40px;
+	position: relative;
+  }
+  .buypage_wrapper .top_content .img_left img {
+	margin-right: 0;
+	height: 150px;
+	width: 200px;
+  }
+  .buypage_wrapper .info_price {
+	line-height: 30px;
+  }
+  .buypage_wrapper .price_name, .price_text, .price_btn {
+	font-size: 16px;
+  }
+  .buypage_wrapper .price_btn {
+	position: absolute;
+	top: -160px;
+	right: 20px;
+  }
+  .buypage_wrapper .price_btn img{
+	width: 25px;
+	height: 25px;
+  }
+}
