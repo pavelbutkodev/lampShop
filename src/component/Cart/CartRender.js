@@ -15,8 +15,8 @@ const CartRender = (props) => {
             id={_id}
             productId={productId}
             render={() => props.render()}
-      />
-      )
+          />
+        )
       }
     )
   } else return null

@@ -2,9 +2,9 @@ import React, {useCallback, useState} from 'react';
 
 import InputForm from './InputForm';
 import Btnform from './ButtonForm';
+import {login} from '../../services/ajaxUser';
 
 import './Sign.scss';
-import {login} from '../../services/ajaxUser';
 
 const SignUp = () => {
   const [form, setForm] = useState({

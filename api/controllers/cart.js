@@ -2,7 +2,6 @@ const Cart = require('../models/Cart')
 const Product = require('../models/Product')
 const errorHandler = require('../utils/errorHandler')
 
-//getAll
 module.exports.getAll = async (req, res) => {
   try {
     const carts = await Cart.find({user: req.user.id})
@@ -12,14 +11,12 @@ module.exports.getAll = async (req, res) => {
   }
 }
 
-//remove
 module.exports.remove = async (req, res) => {
   try {
     await Cart.deleteOne({
       productId: req.params.id,
       user: req.user.id
     })
-    console.log('==========>',req.body.productId )
     const product = await Product.find({productId: req.params.id})
     const {total} =  product[0]
     const updated = {
@@ -36,7 +33,6 @@ module.exports.remove = async (req, res) => {
   }
 }
 
-//create
 module.exports.createElem = async (req, res) => {
   try {
     const product = await Product.find({productId: req.body.productId})
@@ -65,7 +61,6 @@ module.exports.createElem = async (req, res) => {
   }
 }
 
-//checkOut
 module.exports.checkOut = async (req, res) => {
   try {
     await Cart.remove({user: req.user.id})

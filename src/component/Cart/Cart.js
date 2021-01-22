@@ -1,24 +1,25 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useCallback, useState} from 'react';
+
+import {deleteOne} from "../../services/ajaxUser";
 
 import './Cart.scss';
 import close from '../../img/33.png'
-import {deleteOne, addOne} from "../../services/ajaxUser";
 
 const Cart = (props) => {
-  const [remove, setRemove] = useState(null)
+  const setRemove = useState(null)
   const addOneCard = useCallback(
     (data) => {
       deleteOne(data, props.total)
         .then(data => {
-          setRemove(data)
+          setRemove[1](data)
         })
         .catch(e => console.log('==========>e', e))
-      setRemove(data)
+      setRemove[1](data)
     }, [])
 
   const btnRemove = () => {
     addOneCard(props.productId)
-    setTimeout(()=>{
+    setTimeout(() => {
       props.render()
     }, 500)
   }

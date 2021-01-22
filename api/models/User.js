@@ -15,10 +15,6 @@ const userSchema = new Schema({
     type: String,
     default: '',
   },
-  // cart: [{
-  //   id: {String},
-  //   total: {String}
-  // }]
 })
 
 module.exports = mongoose.model('users', userSchema);
