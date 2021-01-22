@@ -1,16 +1,15 @@
 .cart_wrapper {
   .top_content {
     background: none;
-    padding-top: 50px;
+    padding-top: 10px;
     display: flex;
   }
 
   .top_content .img_left img {
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     background-color: #f2f2f2;
-    border: 2px solid #e6e6e5;
-    margin-right: 50px;
+    margin-right: 24px;
   }
 
   .info_price{
@@ -20,17 +19,20 @@
   }
 
   .price_name {
-    color: rgb(66,130,196);
-    font-size: 40px;
+    color: #4183c4;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 5px 0;
   }
 
   .price_many {
-    font-size: 25px;
+    font-size: 16px;
     opacity: .5;
   }
 
   .price_text {
-    font-size: 22px;
+    margin-top: 5px;
+    font-size: 16px;
     color: #000;
   }
 
@@ -38,12 +40,14 @@
     position: absolute;
     right: 0;
     background: none;
-    border: 2px solid rgba(0, 0, 0, 0.51);
+    font-size: 14px;
+    border: none;
   }
 
   .price_btn img{
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
+    border: 2px solid rgba(0, 0, 0, 0.51);
   }
 
 }

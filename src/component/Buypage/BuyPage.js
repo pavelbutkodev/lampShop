@@ -54,8 +54,8 @@ const BuyPage = (props) => {
         </div>
         <div className="info_price">
           <div className="price_name">{product.name}</div>
-          <div className="price_many">${product.price}</div>
-          <div className="price_text">id: {product.id}</div>
+          <div className="price_many">${product.price}.00</div>
+          <div className="price_text">id: {product.total}</div>
           <div className="send_add">
             <input type="text" ref={textInput}/>
             <button className="price_btn" onClick={handleCheckItemInLocalHost}>Add to Cart</button>
@@ -64,10 +64,9 @@ const BuyPage = (props) => {
         </div>
       </div>
       <div className="about_lamp">
-        About this product <br/><br/>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, aliquam aliquid architecto asperiores
-        beatae consequuntur distinctio eligendi esse laboriosam laborum modi odio, optio, placeat rem
-        repudiandae? Ab blanditiis excepturi quam.
+        <h3>About this product</h3>
+        <p>This adjustable table lamp comes in matt black with a striking copper detail. It has a good, sturdy construction and is adjustable. It will add a funky and contemporary feel to any room.
+        </p>
       </div>
     </div>
   );

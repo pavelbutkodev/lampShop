@@ -8,8 +8,8 @@ import {
 
 import Heart from '../Heart/Heart';
 import Card from '../Card/Card';
-import SignUp from '../Sign/SignUp';
 import SignIn from '../Sign/SignIn';
+import SignUp from '../Sign/SignUp';
 import CartFooter from '../Cart/CartFooter';
 import BuyPage from '../Buypage/BuyPage';
 import CartRender from '../Cart/CartRender'
@@ -59,7 +59,7 @@ const Nav = () => {
             <div className="left_col">
               <NavLink
                 to="/starter"
-                className="nav_link"
+                className="nav_link starter"
                 exact
                 activeClassName="active"
               >
@@ -148,11 +148,11 @@ const Nav = () => {
                 })}
               </div>
             </Route>
-            <Route path="/signin">
-              <SignUp/>
-            </Route>
             <Route path="/signup">
               <SignIn/>
+            </Route>
+            <Route path="/signin">
+              <SignUp/>
             </Route>
             <Route path="/cart">
               <CartRender render={getCartCall} cards={cartToken}/>

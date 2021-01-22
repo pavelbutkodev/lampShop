@@ -7,14 +7,14 @@
 .nav_wrapper {
   margin: 0 auto;
   width: 100%;
-  height: 100px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  box-shadow: 2px -7px 20px -4px rgba(0,0,0,0.51);
+  height: 69.3px;
+  border: 1px solid rgba(34,36,38,.15);
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  border-radius: .28571429rem;
 }
 
 .container {
-  max-width: 1200px;
-  width: 100%;
+  max-width: 700px;
   margin: 0 auto;
   height: 100%;
   padding: 0;
@@ -28,15 +28,20 @@
 }
 
 .navbar {
+  color: rgba(0,0,0,.95);
   padding: 0;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.navbar .left_col .starter{
+  font-size: 16px;
 }
 
 .nav_link {
   display: block;
   color: #000;
-  padding: 36px 1.5em;
+  padding: 24px 25px;
   text-decoration: none;
 }
 
@@ -51,40 +56,53 @@
   position: relative;
 }
 
-.active:after, .active:before {
-  top: 100%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position:   absolute;
-  pointer-events: none;
-}
+//.active:after, .active:before {
+//  top: 100%;
+//  border: solid transparent;
+//  content: " ";
+//  height: 0;
+//  width: 0;
+//  position:   absolute;
+//  pointer-events: none;
+//}
 
 .active:after {
-  border-color: rgba(255, 255, 255, 0);
-  border-top-color: rgb(242,242,242);
-  border-width: 10px;
+  visibility: visible;
+  position: absolute;
+  content: "";
+  top: 100%;
   left: 50%;
-  margin-left: -10px;
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  margin: .5px 0 0;
+  width: .57142857em;
+  height: .57142857em;
+  border: 1px solid #d4d4d5;
+  border-top: none;
+  border-left: none;
+  z-index: 2;
+  -webkit-transition: background .1s ease;
+  transition: background .1s ease;
+  background-color: #f2f2f2;
 }
-.active:before {
-  border-color: rgba(0, 83, 129, 0);
-  border-top-color: #000;
-  border-width: 11px;
-  left: 50%;
-  margin-left: -11px;
-}
-
+//.active:before {
+//  border-color: rgba(0, 83, 129, 0);
+//  border-top-color: #000;
+//  border-width: 10px;
+//  left: 50%;
+//}
 
 .left_col, .right_col {
   display: flex;
 }
 
+.promo_wrapper {
+  margin-top: 10px;
+}
+
 .wrapper_main {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 .menuBurger {
@@ -119,8 +137,8 @@
 
   .menuBurger {
     display: inline-block;
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     margin-right: 25px;
   }
 }
