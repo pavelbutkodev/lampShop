@@ -64,7 +64,7 @@ export const deleteOne = (id, total) => {
 };
 
 export const addOne = (id, total) => {
-  const url = `${urls.CART}/${id}`;
+  const url = `${urls.CART}/${total}`;
   return ajaxWrapper({
     method: 'POST',
     url,

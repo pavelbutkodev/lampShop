@@ -1,13 +1,10 @@
-import React, {useCallback, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 
 import './Cart.scss';
 import close from '../../img/33.png'
-import {deleteOne} from "../../services/ajaxUser";
+import {deleteOne, addOne} from "../../services/ajaxUser";
 
 const Cart = (props) => {
-  console.log('==========>propsdfwerqerqrweerq', props.total)
-  const textInput = useRef(null);
-
   const [remove, setRemove] = useState(null)
   const addOneCard = useCallback(
     (data) => {
@@ -21,6 +18,9 @@ const Cart = (props) => {
 
   const btnRemove = () => {
     addOneCard(props.productId)
+    setTimeout(()=>{
+      props.render()
+    }, 500)
   }
 
   return (
@@ -33,7 +33,7 @@ const Cart = (props) => {
           <div className="price_name">{props.name}</div>
           <div className="price_many">{props.total}x ${props.price}</div>
           <div className="price_text">Some more information goes here</div>
-          <button className="price_btn" ref={textInput} onClick={btnRemove}><img src={close} alt=""/></button>
+          <button className="price_btn" onClick={btnRemove}><img src={close} alt=""/></button>
         </div>
       </div>
     </div>

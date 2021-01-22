@@ -11,9 +11,9 @@ const BuyPage = (props) => {
   const textInput = useRef(null);
 
   const [createElem, setCreateElem] = useState(null)
-  const removeOneCard = useCallback(
+  const addOneCard = useCallback(
     (data) => {
-      addOne(data, props.total)
+      addOne(data, textInput.current.value)
         .then(data => {
           setCreateElem(data)
           props.render()
@@ -27,7 +27,7 @@ const BuyPage = (props) => {
       setError(null);
     } else {
       e.preventDefault();
-      removeOneCard(product.productId)
+      addOneCard(product.productId)
     }
   };
 

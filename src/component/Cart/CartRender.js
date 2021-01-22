@@ -1,11 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
 import Cart from './Cart';
 
 const CartRender = (props) => {
-  console.log('==========>propsdassssssssssssssssssss', props)
   if (props.cards && props.cards.length > 0) {
-    console.log('==========>props.cards', props.cards)
     return props.cards.map(({name, price, img, total, _id, productId}, index) => {
         return (
           <Cart
