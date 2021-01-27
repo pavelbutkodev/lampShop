@@ -1,7 +1,5 @@
-import React, {useCallback, useEffect, useState} from 'react';
-import {
-  useHistory
-} from 'react-router-dom';
+import React from 'react';
+import {useHistory} from 'react-router-dom';
 
 import './Card.scss';
 
@@ -27,4 +25,5 @@ const Card = (props) => {
     </div>
   );
 }
+
 export default Card;

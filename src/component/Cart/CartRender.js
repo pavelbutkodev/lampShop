@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
 import Cart from './Cart';
 
 const CartRender = (props) => {
-
-  if(props.cards && props.cards.length > 0){
-    return props.cards.map(({name, price, img, total, id}, index) => {
+  if (props.cards && props.cards.length > 0) {
+    return props.cards.map(({name, price, img, total, _id, productId}, index) => {
         return (
           <Cart
             name={name}
@@ -13,10 +12,9 @@ const CartRender = (props) => {
             img={img}
             total={total}
             key={index}
-            id={id}
-            onRemove={() => {
-              // localStorage.setItem('cart', JSON.stringify(props.cards.filter((card, inx) => inx !== index)))
-            }}
+            id={_id}
+            productId={productId}
+            render={() => props.render()}
           />
         )
       }

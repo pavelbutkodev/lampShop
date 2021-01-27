@@ -2,28 +2,23 @@ import React, {useCallback, useState} from 'react';
 
 import InputForm from './InputForm';
 import Btnform from './ButtonForm';
+import {registration} from '../../services/ajaxUser';
 
 import './Sign.scss';
-import {login} from '../../services/ajaxUser';
 
 const SignUp = () => {
   const [form, setForm] = useState({
+    name: '',
     email: '',
-    password: ''
+    password: '',
   })
 
   const getApiCall = useCallback(
     (data) => {
-      login(data)
-        .then((response) => {
-          console.log('==========>response', response)
-        })
-        .catch((e) => {
-          console.log('==========>e', e)
-        })
+      registration(data)
     }, [])
 
-  const handleLoginClick = () => {
+  const handleRegisterClick = () => {
     getApiCall(form)
   }
 
@@ -38,12 +33,33 @@ const SignUp = () => {
 
   return (
     <div className="sign_wrapper">
-      <h2>Log in your account</h2>
-      <InputForm value={form.email} onChange={(e) => handleInputChange(e, 'email')} name={'Email'} type={'email'}/>
-      <InputForm value={form.password} onChange={(e) => handleInputChange(e, 'password')} name={'Password'} type={'password'}/>
-      <Btnform name="Login" onClick={() => handleLoginClick()}/>
+      <h2>Create an account</h2>
+      <div className="wrapper_form">
+        <InputForm
+          value={form.name}
+          onChange={(e) => handleInputChange(e, 'name')}
+          name={'Name'}
+          type={'text'}
+        />
+        <InputForm
+          value={form.email}
+          onChange={(e) => handleInputChange(e, 'email')}
+          name={'Email'}
+          type={'email'}
+        />
+        <InputForm
+          value={form.password}
+          onChange={(e) => handleInputChange(e, 'password')}
+          name={'Password'}
+          type={'password'}
+        />
+        <Btnform
+          onClick={() => handleRegisterClick()}
+          name="Register"
+        />
+      </div>
     </div>
-  )
-};
+  );
+}
 
 export default SignUp;
