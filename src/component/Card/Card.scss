@@ -6,6 +6,8 @@
   box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
   margin: 1em;
   transition: transform .2s;
+  box-sizing: border-box;
+
   &:hover {
     transform: translateY(-5px);
   }
@@ -13,7 +15,7 @@
 
 .card_wrapper .main {
   height: 334px;
-  background: rgb(242,242,242);
+  background: rgb(242, 242, 242);
 }
 
 .card_wrapper .main img {
@@ -48,11 +50,12 @@
     width: 200px;
     border-radius: 0;
   }
+
   .card_wrapper .main img {
     height: 200px;
   }
 
-  .card_wrapper .main{
+  .card_wrapper .main {
     height: 200px;
   }
 }
